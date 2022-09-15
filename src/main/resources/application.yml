@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+  flyway:
+    baseline-on-migrate: true
+
+hsql:
+  url: jdbc:hsqldb:hsql://localhost/db1
+
+server:
+  port: 8080
+
+runner:
+  duration: 3600000
