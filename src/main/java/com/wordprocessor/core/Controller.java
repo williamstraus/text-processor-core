@@ -17,14 +17,12 @@ public class Controller {
     private EntryDTO entryDTO;
 
     @GetMapping("/{id}")
-    @CrossOrigin()
     public Entry entry(@PathVariable UUID id) throws JsonProcessingException {
         entryDTO = entryDao.getEntryForId(id);
         return new Entry(entryDTO.getId(), jsonToObject(entryDTO.getCount()));
     }
 
     @PostMapping("/")
-    @CrossOrigin()
     public String postEntry(@RequestBody Input input) {
         return sender.send(input.getText());
     }
